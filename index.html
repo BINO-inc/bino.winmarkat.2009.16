@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinMarket - وفر أكثر</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <div id="splash-screen">
+    <img src="logo.png" alt="WinMarket Logo" id="logo">
+    <h1>جارٍ التحميل...</h1>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <header>
+      <h1>مرحبًا بك في WinMarket</h1>
+      <p>وفر أكثر... اكتشف المتاجر والعروض حسب منطقتك</p>
+
+      <div class="location-select">
+        <label for="governorate">اختر المحافظة:</label>
+        <select id="governorate">
+          <option value="">-- اختر --</option>
+          <option>عمان</option><option>إربد</option><option>الزرقاء</option><option>البلقاء</option><option>جرش</option><option>عجلون</option><option>مأدبا</option><option>الكرك</option><option>الطفيلة</option><option>معان</option><option>العقبة</option><option>المفرق</option>
+        </select>
+
+        <label for="area">اختر المنطقة:</label>
+        <select id="area">
+          <option>الرجاء اختيار محافظة أولًا</option>
+        </select>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="ابحث عن منتج أو متجر..." id="text-search">
+        <button id="search-btn">🔍</button>
+        <input type="file" accept="image/*" id="camera-input" style="display:none">
+        <button id="camera-btn">📷</button>
+      </div>
+    </header>
+
+    <section id="categories">
+      <h2>الأقسام</h2>
+      <ul>
+        <li data-type="طعام">🍔 طعام</li>
+        <li data-type="مشروبات">🥤 مشروبات</li>
+        <li data-type="منظفات">🧼 منظفات</li>
+        <li data-type="ملابس">👕 ملابس</li>
+        <li data-type="حيوانات">🐶 مستلزمات حيوانات</li>
+        <li data-type="مولات">🏪 مولات</li>
+        <li data-type="عسكري">🏅 المؤسسات العسكرية</li>
+        <li data-type="عروض">🔥 عروض دائمة</li>
+      </ul>
+    </section>
+
+    <section id="map">
+      <h2>المتاجر القريبة منك</h2>
+      <div id="map-container"></div>
+    </section>
+
+    <footer>
+      <p>تطوير بواسطة <strong>BINO</strong> © 2025</p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="jordan-coordinates.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
